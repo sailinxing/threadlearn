@@ -6,12 +6,13 @@ import java.util.concurrent.Executors;
 public class ThreadPoolWithRunable {
     /**
      * 通过线程池执行线程
+     *
      * @param args
      */
     public static void main(String[] args) {
         //创建一个线程池
-        ExecutorService pool= Executors.newCachedThreadPool();
-        for(int i=1;i<5;i++){
+        ExecutorService pool = Executors.newCachedThreadPool();
+        for (int i = 1; i < 5; i++) {
             pool.execute(new Runnable() {
                 @Override
                 public void run() {

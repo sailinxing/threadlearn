@@ -7,13 +7,14 @@ import java.util.concurrent.locks.ReentrantLock;
 public class MyTryLock {
     private static ArrayList<Integer> arrayList = new ArrayList<Integer>();
     static Lock lock = new ReentrantLock(); // 注意这个地方
+
     public static void main(String[] args) {
 
         new Thread() {
             public void run() {
                 Thread thread = Thread.currentThread();
                 boolean tryLock = lock.tryLock();
-                System.out.println(thread.getName()+" "+tryLock);
+                System.out.println(thread.getName() + " " + tryLock);
                 if (tryLock) {
                     try {
                         System.out.println(thread.getName() + "得到了锁");
@@ -27,14 +28,16 @@ public class MyTryLock {
                         lock.unlock();
                     }
                 }
-            };
+            }
+
+            ;
         }.start();
 
         new Thread() {
             public void run() {
                 Thread thread = Thread.currentThread();
                 boolean tryLock = lock.tryLock();
-                System.out.println(thread.getName()+" "+tryLock);
+                System.out.println(thread.getName() + " " + tryLock);
                 if (tryLock) {
                     try {
                         System.out.println(thread.getName() + "得到了锁");
@@ -49,7 +52,9 @@ public class MyTryLock {
                     }
                 }
 
-            };
+            }
+
+            ;
         }.start();
     }
 }

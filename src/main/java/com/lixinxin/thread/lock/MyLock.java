@@ -7,6 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class MyLock {
     private static ArrayList<Integer> arrayList = new ArrayList<Integer>();
     static Lock lock = new ReentrantLock(); // 注意这个地方
+
     public static <E> void main(String[] args) {
         new Thread() {
             public void run() {
@@ -25,7 +26,9 @@ public class MyLock {
                     lock.unlock();
                 }
 
-            };
+            }
+
+            ;
         }.start();
 
         new Thread() {
@@ -44,7 +47,9 @@ public class MyLock {
                     lock.unlock();
                 }
 
-            };
+            }
+
+            ;
         }.start();
     }
 }

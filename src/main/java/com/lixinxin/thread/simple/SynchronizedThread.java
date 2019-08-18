@@ -22,13 +22,13 @@ public class SynchronizedThread {
         new Thread("thread2") {
             public void run() {
                 synchronized (mySynchronized) {         //争抢同一把锁时，线程1没释放之前，线程2只能等待
- //                   synchronized (mySynchronized2) {    //如果不是一把锁，可以看到两句话同时打印
-                        System.out.println(this.getName() + " start");
-                        System.out.println(this.getName() + " end");
+                    //                   synchronized (mySynchronized2) {    //如果不是一把锁，可以看到两句话同时打印
+                    System.out.println(this.getName() + " start");
+                    System.out.println(this.getName() + " end");
 
-                    }
                 }
+            }
 
-            }.start();
+        }.start();
     }
 }

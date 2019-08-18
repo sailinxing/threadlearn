@@ -1,6 +1,6 @@
 package com.lixinxin.thread.simple;
 
-public class MyThreadWithImpliment implements Runnable{
+public class MyThreadWithImpliment implements Runnable {
     private int x;
 
     public MyThreadWithImpliment(int x) {
