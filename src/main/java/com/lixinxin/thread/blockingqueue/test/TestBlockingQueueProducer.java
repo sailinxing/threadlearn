@@ -22,7 +22,7 @@ public class TestBlockingQueueProducer implements Runnable {
                 System.out.println(task);
                 queue.put(task);
             } catch (InterruptedException e) {
-				 
+
                 e.printStackTrace();
             }
 
